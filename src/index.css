@@ -1,0 +1,110 @@
+body {
+  margin: 30px 150px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Obecné styly */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+ /* background-color: #c5c5c5; /* světlé pozadí */
+ background-image: url("C:\Users\micha\OneDrive\Plocha\Lusider program\Lusider\obrazky\1346455.png"); /* Cesta k obrázku */
+ background-size: cover; /* Velikost obrázku - pokryje celé pozadí */
+ background-position:  0px -90px; /* Pozice obrázku */
+ background-repeat: no-repeat; /* Zabraňuje opakování obrázku */
+ background-attachment: fixed;
+ 
+}
+
+
+.container {
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+  overflow: hidden; /* zajistí, že obsah containeru bude obklopen a zarovnán podle prvků uvnitř */
+}
+
+.header {
+  background-color: #e67e22; /* oranžová */
+  color: #fff; /* bílá */
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  border-color: #000000;
+}
+
+@keyframes wave {
+  0%, 100% {
+      transform: translateY(0); /* Původní pozice */
+  }
+  50% {
+      transform: translateY(-5px); /* Přechodná pozice, kdy se písmena zvednou */
+  }
+}
+
+/* Logo na levé straně nahoře */
+.logo {
+  float: left;
+  width: 10px;
+  height: 5px;
+}
+
+/* Tlačítko na pravé straně nahoře */
+.button {
+  float: right;
+  padding: 20px;
+}
+
+/* Tlačítka ve středu vedle sebe */
+.button-middle-center{
+  text-align: center;
+}
+
+.button-middle-1 {
+  display: inline-block;
+padding: 10px; 
+text-align: center;
+}
+
+/* Vyhledávací pole ve středu stránky */
+.search-box {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  padding-top: 270px;
+}
+
+.main-text-border{
+  border: 2px solid #888; /* Tloušťka a barva rámečku */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stín kolem rámečku */
+  max-width: 500px;
+  position: absolute;
+  top: 250px;
+  left: 500px;
+  background-color: #ffffff;
+}
+
+.main-text {
+  color: #000000; /* Barva textu */
+  font-size: 30px; /* Velikost textu */
+  font-weight: bold; /* Tučnost textu */
+  transform: translateY(2px); /* Odsazení textu od podlahy */
+  text-align: center;
+  animation: wave 0.5s infinite alternate; /* Použití animace s keyframes */
+
+
+}
+.navbar {
+  background-color: #ffffff; /* Barva pozadí */
+  color: #fff; /* Barva textu */
+}
