@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
  /* background-color: #c5c5c5; /* světlé pozadí */
- background-image: url("C:\Users\micha\OneDrive\Plocha\Lusider program\Lusider\obrazky\1346455.png"); /* Cesta k obrázku */
+ background-image: url("C:\Users\michal.bogdan\OneDrive - Soukromá SOŠ a SOU BEAN, s.r.o\Plocha\Lusider Web\Lusider\obrazky\1346455.png"); /* Cesta k obrázku */
  background-size: cover; /* Velikost obrázku - pokryje celé pozadí */
  background-position:  0px -90px; /* Pozice obrázku */
  background-repeat: no-repeat; /* Zabraňuje opakování obrázku */
@@ -90,7 +90,7 @@ text-align: center;
   max-width: 500px;
   position: absolute;
   top: 250px;
-  left: 500px;
+  left: 700px;
   background-color: #ffffff;
 }
 
