@@ -1,46 +1,32 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import './index.css';
-import lusiderLogo from "./lusiderLogo.png";
 import axios from 'axios';
+import lusiderLogo from "./lusiderLogo.png";
 
 function Aplikace() {
-  const [hledanyText, nastavHledanyText] = useState('');
-  /*
-    const hledatRecepty = () => {
-      // Odeslat hledací dotaz na API
-      const dotaz = encodeURIComponent(hledanyText);
-      const apiKey = 'E7dXdvQ1jlUNl21XrPGMew==NOYRxQLcwxhFkE7W'; // Nahraďte svým API klíčem
-      const apiUrl = `https://api.api-ninjas.com/v1/recipe?query=${dotaz}`;
-      
-      // Přesměrovat na stránku s recepty
-      window.location.href = apiUrl;
-    };
-  */
-  const hledatRecepty = () => {
-    axios.get('https://api.api-ninjas.com/v1/recipe?query=' + hledanyText, {
-      params: {
-        'X-Api-Key': 'E7dXdvQ1jlUNl21XrPGMew==NOYRxQLcwxhFkE7W',
-      }
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  const [query, setQuery] = useState('');
+  const [recipes, setRecipes] = useState([]);
+  const API_KEY = 'E7dXdvQ1jlUNl21XrPGMew==NOYRxQLcwxhFkE7W';
 
-  const zmenaVstupu = (udalost) => {
-    nastavHledanyText(udalost.target.value);
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`https://api.api-ninjas.com/v1/recipe?query=${query}`, {
+        headers: {
+          'X-Api-Key': API_KEY
+        }
+      });
+      setRecipes(response.data);
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+    }
   };
 
   return (
-    <>
-      <div className="container">
+    <div className="container">
         <nav className="navbar">
           <div className="logo">
-            <img src={lusiderLogo} alt="Logo Lusider" style={{ height: "70px" }} />
+          <img src={lusiderLogo} alt="Logo Lusider" style={{ height: "70px" }} />
           </div>
 
           <div className="button">
@@ -63,29 +49,36 @@ function Aplikace() {
         </nav>
         <br />
 
-
-        <div className="main-text-border">
-          <p className="main-text">Zadejte jednotlivé potraviny oddělené čárkou</p>
-        </div>
-        <br />
-        <div className="search-box">
-          <TextField
-            id="filled-search"
-            label="Najdi recept"
-            type="search"
-            size='small'
-            variant="filled"
-            style={{ backgroundColor: "white" }}
-            value={hledanyText}
-            onChange={zmenaVstupu}
-          />
-          <Button variant="outlined" size='large' style={{ backgroundColor: "white" }} onClick={hledatRecepty}>🔍</Button>
-        </div>
+      <div className="main-text-border">
+        <p className="main-text">Zadejte jméno svého vysněného receptu</p>
+      </div>
+      <br />
+      <div className="search-box">
+        <TextField
+          id="filled-search"
+          label="Najdi recept"
+          type="search"
+          size='small'
+          variant="filled"
+          style={{ backgroundColor: "white" }}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button variant="outlined" size='large' style={{ backgroundColor: "white" }} onClick={handleSearch}>🔍</Button>
       </div>
 
-    </>
-
-  );
+      <div>
+        {recipes.map(recipe => (
+          <div key={recipe.title} className="recipe-border">
+            <h3 className="recipe-title">{recipe.title}</h3>
+            <p className="recipe-info"><strong>Ingredience:</strong> {recipe.ingredients}</p>
+            <p className="recipe-info"><strong>Počet porcí:</strong> {recipe.servings}</p>
+            <p className="recipe-info"><strong>Postup:</strong> {recipe.instructions}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Aplikace;

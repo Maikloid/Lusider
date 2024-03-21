@@ -11,16 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* Obecné styly */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
- /* background-color: #c5c5c5; /* světlé pozadí */
- background-image: url("C:\Users\michal.bogdan\OneDrive - Soukromá SOŠ a SOU BEAN, s.r.o\Plocha\Lusider Web\Lusider\obrazky\1346455.png"); /* Cesta k obrázku */
- background-size: cover; /* Velikost obrázku - pokryje celé pozadí */
- background-position:  0px -90px; /* Pozice obrázku */
- background-repeat: no-repeat; /* Zabraňuje opakování obrázku */
+ 
+ background-image: url("C:\Users\micha\OneDrive\Plocha\Lusider program\Lusider\obrazky\1346455.png"); 
+ background-size: cover; 
+ background-position:  0px -90px; 
+ background-repeat: no-repeat; 
  background-attachment: fixed;
  
 }
@@ -31,12 +31,12 @@ body {
   margin: 0 auto;
 
   box-sizing: border-box;
-  overflow: hidden; /* zajistí, že obsah containeru bude obklopen a zarovnán podle prvků uvnitř */
+  overflow: hidden; 
 }
 
 .header {
-  background-color: #e67e22; /* oranžová */
-  color: #fff; /* bílá */
+  background-color: #e67e22; 
+  color: #fff; 
   padding: 20px;
   text-align: center;
   border-radius: 5px;
@@ -45,27 +45,27 @@ body {
 
 @keyframes wave {
   0%, 100% {
-      transform: translateY(0); /* Původní pozice */
+      transform: translateY(0); 
   }
   50% {
-      transform: translateY(-5px); /* Přechodná pozice, kdy se písmena zvednou */
+      transform: translateY(-5px);
   }
 }
 
-/* Logo na levé straně nahoře */
+
 .logo {
   float: left;
   width: 10px;
   height: 5px;
 }
 
-/* Tlačítko na pravé straně nahoře */
+
 .button {
   float: right;
   padding: 20px;
 }
 
-/* Tlačítka ve středu vedle sebe */
+
 .button-middle-center{
   text-align: center;
 }
@@ -76,35 +76,88 @@ padding: 10px;
 text-align: center;
 }
 
-/* Vyhledávací pole ve středu stránky */
+
 .search-box {
   display: block;
-  margin: 20px auto;
+  margin-top: 80px;
   text-align: center;
   padding-top: 270px;
+  padding-bottom: 5px;
 }
 
 .main-text-border{
-  border: 2px solid #888; /* Tloušťka a barva rámečku */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stín kolem rámečku */
+  border: 2px solid #888; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
   max-width: 500px;
   position: absolute;
   top: 250px;
-  left: 700px;
+  left: 500px;
   background-color: #ffffff;
 }
 
 .main-text {
-  color: #000000; /* Barva textu */
-  font-size: 30px; /* Velikost textu */
-  font-weight: bold; /* Tučnost textu */
-  transform: translateY(2px); /* Odsazení textu od podlahy */
+  color: #000000; 
+  font-size: 30px; 
+  font-weight: bold; 
+  transform: translateY(2px); 
   text-align: center;
-  animation: wave 0.5s infinite alternate; /* Použití animace s keyframes */
+  animation: wave 0.5s infinite alternate; 
 
 
 }
 .navbar {
-  background-color: #ffffff; /* Barva pozadí */
-  color: #fff; /* Barva textu */
+  position: fixed; 
+  top: 0; 
+  background-color: #ffffff; 
+  color: #fff; 
+  z-index: 1000; 
+  width: 100%; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
+
+.recipe-border {
+  border: 2px solid #888; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  max-width: 800px;
+  margin: 0 auto; 
+  text-align: left;
+  background-color: #f9f9f9; 
+  padding: 20px; 
+  transition: transform 0.3s ease; 
+}
+
+.recipe-border:hover {
+  transform: scale(1.1) translateY(-10px); 
+}
+
+.recipe-title {
+  font-size: 24px;
+  color: #000000; 
+  text-transform: uppercase; 
+  margin-bottom: 10px;
+}
+
+.recipe-info {
+  font-size: 16px;
+  color: #000000; 
+  line-height: 1.6; 
+}
+
+.recipe-info strong {
+  font-weight: bold;
+  color: #000000; 
+}
+
+
+.recipe-title:hover {
+  color: #ff6600; 
+  transition: color 0.3s ease; 
+}
+
+
+.recipe-info:hover {
+  color: #464646; 
+  transition: color 0.3s ease; 
+}
+
+
