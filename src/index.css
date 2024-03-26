@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
  
- background-image: url("C:\Users\micha\OneDrive\Plocha\Lusider program\Lusider\obrazky\1346455.png"); 
+ background-image: url("C:\Users\michal.bogdan\OneDrive - Soukromá SOŠ a SOU BEAN, s.r.o\Plocha\Lusider Web\Lusider\obrazky\1346455.png"); 
  background-size: cover; 
  background-position:  0px -90px; 
  background-repeat: no-repeat; 
@@ -82,7 +82,7 @@ text-align: center;
   margin-top: 80px;
   text-align: center;
   padding-top: 270px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 .main-text-border{
@@ -90,8 +90,10 @@ text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
   max-width: 500px;
   position: absolute;
-  top: 250px;
-  left: 500px;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   background-color: #ffffff;
 }
 
